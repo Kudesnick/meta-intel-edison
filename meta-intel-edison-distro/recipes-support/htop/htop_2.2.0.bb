@@ -1,15 +1,19 @@
 SUMMARY = "Interactive process viewer"
-HOMEPAGE = "http://github.com/hishamhm/htop"
+HOMEPAGE = "http://github.com/htop-dev/htop"
 SECTION = "console/utils"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=c312653532e8e669f30e5ec8bdc23be3"
 
 DEPENDS = "ncurses"
 
-SRC_URI = "https://github.com/hishamhm/htop/archive/${PV}.tar.gz \
+SRCREV = "04cc193e3c0c39ea47eb01d61a6866b32d70baea"
+
+SRC_URI = "git://github.com/htop-dev/htop.git \
            file://0001-Use-pkg-config.patch"
-SRC_URI[md5sum] = "7edaf501e9d117b2acad49bebde9be03"
-SRC_URI[sha256sum] = "fb23275090ee5fb19266384c39c69519c8b3844b8f6444730094949c621197c0"
+#SRC_URI[md5sum] = "7edaf501e9d117b2acad49bebde9be03"
+#SRC_URI[sha256sum] = "fb23275090ee5fb19266384c39c69519c8b3844b8f6444730094949c621197c0"
+
+S = "${WORKDIR}/git"
 
 inherit autotools pkgconfig
 
